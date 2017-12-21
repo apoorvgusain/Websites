@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>apoorgusain</title>
+	<meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"></link>
+<link href="https://fonts.googleapis.com/css?family=Geo|Germania+One|Indie+Flower|Lobster|Nosifer|Noto+Sans|Pacifico|Permanent+Marker&amp;subset=cyrillic,cyrillic-ext,devanagari,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Asap+Condensed" rel="stylesheet">
+
+</head>
+<body>
+	<?php
+	if (isset($_post('button')))
+	$name=$_post['Name'];
+	$email=$_post['Email'];
+	$subject=$_post['Subject'];
+	$Message=$_post['Message'];
+	$adminwebsite="apoorvgusain123@gmail.com"
+	//echo $name.' '.$email. ' '.$subject.' '$message;
+	$header="Reply to :$email";
+	mail($adminwebsite,$subject,$message,$header);
+	?>
+
+     <header id="#">
+
+     	<ul>
+     		<li><a href="#">Home</a></li>
+     		<li><a href="#About">About</a></li>
+     		<li><a href="#Expertise">Expertise</a></li>
+				<li><a href="#projects">Projects</a></li>
+				<li><a href="#Contact">Contact</a></li>
+     	</ul>
+
+      <h1 id="main-head">Hi, I'am Apoorv.<br>I Design and Build Websites.</h1>
+      <p id="main-para">
+        A Young Promising Developer</p>
+
+     </header>
+     <section id="About">
+     	 <h1 class="head">About</h1>
+       <img  id="profile" src="profile.jpg">
+     	<p id="intro">I’m a web developer. I spend my whole day, practically every day, experimenting with HTML, CSS, and JavaScript; dabbling with Python and Ruby; and inhaling a wide variety of potentially useless information through a few hundred RSS feeds. I build websites that delight and inform. I do it well.
+I’m curious, and I enjoy work that challenges me to learn something new and stretch in a different direction. I do my best to stay on top of changes in the state of the art so that I can meet challenges with tools well suited to the job at hand. The list of projects I follow on GitHub will give you a good idea of the types of tools I’d prefer to be using, and my Instapaper “Starred” list will give you a glimpse into the reading material I find interesting enough to share.</p>
+     </section>
+
+      <section id="Expertise">
+        <div class="menu-row">
+         <h1 class="head">My Expertise</h1>
+        </div>
+      <div class="flex">
+
+	      	<div class="col-3">
+						<img class="web-image" src="html5.png"></div>
+						<div class="container">
+							<div class="skills html">80%</div>
+						</div>
+		  		</div>
+				</div>
+				<div class="flex">
+
+		     <div class="col-3">
+					 <img class="web-image" src="css3.png"></div>
+					 <div class="container">
+					 	<div class="skills css">70%</div>
+					 </div>
+		  		</div>
+				</div>
+				<div class="flex">
+			<div class="col-3">
+
+						<img class="web-image" src="javascript.png"></div>
+						<div class="container">
+						  <div class="skills js">25%</div>
+						</div>
+      		</div>
+				</div>
+
+
+     </section>
+
+     <section id="projects">
+     	  <h1 class="head">My Projects</h1>
+     	<div class="row flex gap">
+     		<div class="col-3">
+     		<img  class="web-image-2"src="web1.jpg">
+     		<h2 class="mini-para">showroom</h2>
+     	    </div>
+
+     	    <div class="col-3">
+     		<img class="web-image-2" src="web2.jpg">
+      		<h2 class="mini-para">food-site</h2>
+         	</div>
+
+     	    <div class="col-3">
+     		<img  class="web-image-2" src="web3.jpg">
+     		<h2 class="mini-para">ecommerce</h2>
+     	    </div>
+       </div>
+
+       <div class="row flex gap">
+        	<div class="col-3 ">
+     		<img  class="web-image-2" src="web4.jpg">
+     		<h2 class="hedi">school</h2>
+        	</div>
+
+         	<div class="col-3 ">
+     		<img  class="web-image-2" src="web5.jpg">
+     		<h2 class="hedi">travel</h2>
+        	</div>
+
+          	<div class="col-3">
+     		<img  class="web-image-2" src="web6.jpg">
+     		<h2 class="hedi">sports</h2>
+        	</div>
+       </div>
+
+     </section>
+     <section id="Contact">
+     	      <h1 class="head">Want To Work Together</h1>
+              <form name="sendemail" method="post" action=""><input type="text" name="name" placeholder ="Name" ><br>
+     	      <input  type="email" name="email" placeholder="Email" required=""><br>
+     	      <input type="text" name="subject" required="" placeholder="Subject"><br>
+     	     <textarea id="message" placeholder="Message" rows="15"cols="76" required=""></textarea> <br>
+     	       <input id="button" type="submit" value="Submit">
+     	</form>
+     </section>
+    <footer>
+
+				<p> &copy Copyright 2025 | ALL RIGHTS ARE RESERVED BY PRASAIN
+
+					</p>
+		</footer>
+</body>
+</html>

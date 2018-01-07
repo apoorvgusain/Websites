@@ -1,0 +1,56 @@
+
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.container{
+	height: 800px;
+}
+.login{
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	border: 1px solid black;
+	width: 380px;
+    height: 650px;
+   background: linear-gradient(#ffffff8f, #ff05ba4a, black), url(../img/login.jpg) no-repeat;
+ background-position: top;
+background-size: cover; 
+box-shadow: 0px 5px 10px 15px rgba(0,0,0,.8); 
+}
+#icon{
+	position: absolute;
+	top: 30%;
+    width: 80px;
+    height: 80px;
+    left: 38%;
+    border: 3px solid;
+    border-radius: 50%;
+	
+}
+form{
+	position: absolute;
+	top:50%;
+	left:18%;
+
+}
+input{ 
+	border:1px transparent;
+	display: block;
+	margin-top: 20px;
+	height: 40px;
+	width: 230px;
+padding-left: 20px;
+	
+}
+.my-btn{margin-top: 20px;
+	}
+
+button{
+	height: 50px;
+	background-color: red;
+	width: 250px;
+	font-size: 1.2em;
+
+}

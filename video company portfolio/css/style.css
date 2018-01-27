@@ -1,0 +1,62 @@
+.playLogo{
+  font-size: 50px;
+  color:white;
+}
+.imageDisplay{
+margin: 0px !important;
+padding:0px!important;
+}
+.bg {
+background-image: url("../img/back-pic.jpg");
+width: 101.2%;
+height: 90vh;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+footer{
+  height: 50px;
+  width: 100%;
+}
+.footerConatiner{
+  background-color: #343a40;
+}
+{ border: 1px solid;}
+/**
+**/.myAbout{
+  padding: 80px 50px;
+}
+.button{  margin: auto;}
+#btn-row{padding-top: 20px;}
+.myVideo{
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+.contact{
+  border: 1px solid;
+}
+
+.myBox{
+  box-shadow: 2px 4px 8px 5px black;
+  margin:80px;
+  padding: 50px!important;
+}
+.logos{
+  font-size: 50px;
+  margin: auto;
+  width: 100%;
+  padding: -12px;
+  background-color: white;
+}
+.foot{
+height: 100px;
+padding-bottom: 200px;
+}
+.insta{ background: -webkit-linear-gradient(red, blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;}
+.fb{color: blue;}
+.yt{color: red;}
+i{margin:10px;;
+
+}

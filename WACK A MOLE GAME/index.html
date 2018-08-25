@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Merienda+One" rel="stylesheet">
+    <title>JQuery Game </title>
+    <style>
+    *{padding: 0px;
+    	margin:0px;}
+  body{text-align: center;
+  	background:url('green.jpg') no-repeat;
+
+  	background-size: cover; 
+  }
+   .container{
+   	padding:40px ; 
+  }
+   .container>h1{
+   	margin-bottom: 50px;
+   	color:#fff;
+   	font-family: 'Merienda One', cursive;
+   }
+ 
+    .score{margin-top: 120px;
+            background:black;
+            color:white;
+            padding: 20px;
+            font-size:1.5em;
+        }
+        button{border: 0px;
+            padding:20px;
+            font-size:1.2em;
+            background-color: red;
+            color:white;
+        }
+        .message{color:red;
+            font-size:2em;
+            padding:20px;
+            	font-family: 'Merienda One', cursive;
+  
+        }
+        .wack{
+           max-width:100%;
+           position: absolute;
+           left:0px;
+           top:0px;
+           display: none;
+       }
+    .game{ 
+             width:1000px;
+             margin: -170px auto;
+         }
+         .hole {
+             display: inline-block;
+             margin: 10px;
+             width:20%;
+             height:250px;
+             overflow:hidden;
+             position: relative;
+         }
+
+         .dirt {
+             background-image: url(dirt_burned.png);
+             background-size: cover;
+             z-index: 10;
+             position: absolute;
+             height: 50px;
+             bottom:0px;
+             left:0px;
+             width:100%;
+         }
+         .mole{
+             background-image: url(mole.png);
+             background-size: cover;
+             z-index: 3;
+             position: absolute;
+             height: 250px;
+             top:200px;
+             left:0px;
+             width:100%;
+             cursor: crosshair;
+         }
+    </style>
+</head>
+<body>
+	<div class="container">
+    <h1 >Wack A Mole JQuery</h1>
+    <span class="score">0</span>
+    <div class="message"></div>
+    <button id="start">Start Game !</button>
+    </div>
+    <div class="game"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    
+    var score=0;
+    var gameover=false;
+    var lastHole= 0;
+    
+    
+    $(function(){
+    	$('#start').click(startGame);
+   
+      $('.game').on('click','.mole',hitmole);
+    })
+
+
+    function hitmole() {
+          $(this).parent().find('img').show();
+           $(this).hide();
+           $(this).parent().find('img').fadeOut(1000);
+           score++;
+           $('.score').text(score)
+
+    }
+
+    function startGame(){
+      $('#start').hide();
+      //$('.message').text("GOOD LUCK");
+      makeGameBoard();
+      score=0;
+      $('.score').text(score)
+      startMoles();
+      gameover=false;
+      gameTimer(60);
+        
+      /*setTimeout(function(){
+        return 
+      },60000)
+      */
+
+    }
+
+    function gameTimer(secs){
+    	    	var timer;
+    	$('.message').text(secs+"s");
+    	
+    	if(secs<1){
+    	    //clearTimeout(timer);
+            gameEnd();
+    		
+    	}
+    	else{
+    	secs--;
+    	 timer=setTimeout('gameTimer('+secs+')',1000)
+    }
+}
+
+    function startMoles() {
+            var jumpUp = $('.hole' + randomHole() + '> .mole');
+            var timer=Math.round(Math.random()*1000)+400;
+            var lastHole=0;
+            jumpUp.show();
+            jumpUp.animate({
+                top: '70px'
+            }, 500);
+  
+            setTimeout(function () {
+                    jumpUp.animate({
+                        top: '250px'
+                    }, 500);
+                startMoles();
+              },500);
+            }
+  
+  function randomHole()
+  {
+    var hole=Math.floor(Math.random()*$('.hole').length)
+    if( hole == lastHole )
+    {
+    return  randomHole();
+    }
+
+    lastHole == hole;
+    return hole;
+  }
+
+    function gameEnd(){
+    $('#start').show();
+    gameover=true;
+    $('.message').html('<h2>GAME OVER</h2>')
+    $('.hole').remove();
+    
+    }
+
+    function makeGameBoard(){
+             var moles = 8;
+             var html = ' ';
+             for(var mole=0;mole<moles;mole++){
+                 html += '<div class="hole hole'+mole+'"><div class="mole"></div>';
+                 html += '<img src="whack.png" class="wack"><div class="dirt"></div></div>';
+             }
+             $('.game').html(html);
+         }
+
+  </script>
+</body>
+</html>

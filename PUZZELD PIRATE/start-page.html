@@ -1,0 +1,59 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>
+	PUZZELED PIRATE</title>
+	<link rel="shortcut icon" href="puzzel.png">
+	<link rel="stylesheet" type="text/css" href="style.css">
+<!-- bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<!-- Bootstrap ends here -->
+</head>
+	<body>
+		<div class='container-fluid front-div p-5'id="start-div">
+			<!-- tabs for login page -->
+			<div id='login-box' class="p-2"><!-- LOGIN BOX -->
+			 <nav>
+			   <div class="nav nav-tabs" id="nav-tab" role="tablist">
+				    <a class="nav-item text-dark nav-link active" id="nav-signin-tab" data-toggle="tab" href="#nav-signin" role="tab" aria-controls="nav-signin" aria-selected="true">Sign-In</a>
+				    <a class="nav-item nav-link text-dark" id="nav-signup-tab" data-toggle="tab" href="#nav-signup" role="tab" aria-controls="nav-signup" aria-selected="false">Sign-Up</a>
+			    </div>
+	         </nav>
+				<div class="tab-content" id="nav-tabContent">
+				  <div class="tab-pane fade show active" id="nav-signin" role="tabpanel" aria-labelledby="nav-signin-tab"> 
+				  	<form action="action_page.php">
+				  	<p id="form-text" class="text-white font-weight-bold">Please Sign-In to your account.</p>
+					    <hr>
+				  	<input type="text" placeholder="Username" class="profile" required><br>
+				    <input type="password" placeholder="Password" class="profile" required><br><br>
+				    <button type="submit" class="signinbtn btn btn-lg bg-success text-white">Login</button>
+
+				    </form>
+				  </div>
+
+					<div class="tab-pane fade" id="nav-signup" role="tabpanel" aria-labelledby="nav-signup-tab">
+				  	 <form action="action_page.php" >
+				      <div class="container">
+					    <p id="form-text" class="text-white font-weight-bold">Please fill in this form to create an account.</p>
+					    <hr>
+
+					    <input type="text" placeholder="Enter Email" name="email" class="profile" required>
+                        <br>
+					    <input type="password" placeholder="Enter Password" name="psw" class="profile" required>
+                        <br>
+					    <input type="password" placeholder="Repeat Password" name="psw-repeat" class="profile" required>
+					    <br><br>
+					    <button type="submit" class="signupbtn btn btn-lg bg-success text-white" >Sign Up</button>
+					   
+				      </div>
+			         </form> 
+	               </div>
+	            </div>
+			</div>
+
+		</div><!--front div ends-->
+	</body>
+	</html>
